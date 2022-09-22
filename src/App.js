@@ -10,7 +10,7 @@ import News from "./components/News";
 
 const App = () => {
   return (
-    <div>
+    <div className="font-poppins bg-gray-100">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
