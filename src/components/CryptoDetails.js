@@ -116,6 +116,60 @@ const CryptoDetails = () => {
             </h2>
           </div>
         </div>
+        {/* line chart */}
+        {/* info */}
+        <div className="lg:flex lg:justify-between lg:space-x-14">
+          <div className="mt-8">
+            <h1 className="text-blue-500 text-2xl font-semibold">
+              {coin.name} Value Statistics
+            </h1>
+            <p className="mt-2 mb-3">
+              An overview showing the statistics of {coin.name}, such as the
+              base and quote currency, the rank, and trading volume.
+            </p>
+            <div className="">
+              {stats.map((el, i) => (
+                <div
+                  className={`flex items-center justify-between py-6 px-2 ${
+                    i < stats.length - 1 && "border-b"
+                  }`}
+                  key={i}
+                >
+                  <div className="flex items-center text-gray-600 space-x-2">
+                    {el.icon}
+                    <span>{el.title}</span>
+                  </div>
+                  <span className="font-bold">{el.value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="mt-8">
+            <h1 className="text-blue-500 text-2xl font-semibold">
+              Other Stats Info
+            </h1>
+            <p className="mt-2 mb-3">
+              An overview showing the statistics of {coin.name}, such as the
+              base and quote currency, the rank, and trading volume.
+            </p>
+            <div className="">
+              {genericStats.map((el, i) => (
+                <div
+                  className={`flex items-center justify-between py-6 px-2 ${
+                    i < stats.length - 1 && "border-b"
+                  }`}
+                  key={i}
+                >
+                  <div className="flex items-center text-gray-600 space-x-2">
+                    {el.icon}
+                    <span>{el.title}</span>
+                  </div>
+                  <span className="font-bold">{el.value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
