@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { fetchNews } from "../services/fetchFromApi";
 //components
 import moment from "moment/moment";
+import Loader from "./Loader";
 //demo image
 const demoImage =
   "https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News";
@@ -16,7 +17,7 @@ const News = ({ simplified }) => {
     };
     fetchData();
   }, []);
-  if (Object.keys(news).length === 0) return "Loading...";
+  if (Object.keys(news).length === 0) return <Loader />;
   return (
     <div className="mx-auto max-w-[1300px]">
       {!simplified && (

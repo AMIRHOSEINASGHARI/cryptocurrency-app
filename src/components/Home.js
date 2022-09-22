@@ -6,6 +6,7 @@ import { fetchCoins } from "../services/fetchFromApi";
 import millify from "millify";
 import Cryptocurrencies from "./Cryptocurrencies";
 import News from "./News";
+import Loader from "./Loader";
 
 const Home = () => {
   const [coinsData, setCoinsData] = useState({});
@@ -15,7 +16,7 @@ const Home = () => {
     };
     fetchData();
   }, []);
-  if (Object.keys(coinsData).length === 0) return "Loading...";
+  if (Object.keys(coinsData).length === 0) return <Loader />;
   const {
     stats: {
       total24hVolume,

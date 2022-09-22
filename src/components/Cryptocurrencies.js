@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { fetchCoins } from "../services/fetchFromApi";
 //components
 import millify from "millify";
+import Loader from "./Loader";
 
 const Cryptocurrencies = ({ simplified }) => {
   const count = simplified ? 10 : 100;
@@ -15,7 +16,7 @@ const Cryptocurrencies = ({ simplified }) => {
     };
     fetchData();
   }, []);
-  if (Object.keys(coins).length === 0) return "Loading...";
+  if (Object.keys(coins).length === 0) return <Loader />;
   const filteredCoins = coins.coins.filter((el) =>
     el.name.toLowerCase().includes(inputValue.toLowerCase())
   );

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { fetchExchanges } from "../services/fetchFromApi";
 //components
 import millify from "millify";
+import Loader from "./Loader";
 
 const Exchanges = () => {
   const [exchanges, setExchanges] = useState([]);
@@ -12,7 +13,7 @@ const Exchanges = () => {
     };
     fetchData();
   }, []);
-  if (exchanges.length === 0) return "Loading...";
+  if (exchanges.length === 0) return <Loader />;
   return (
     <div className="max-w-[1300px] mx-auto p-3 space-y-3">
       <div className="grid items-center grid-cols-2 text-xs md:text-base lg:text-xl lg:mb-6">
