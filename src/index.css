@@ -3,6 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
+.html-parser h3 {
+    font-weight: bold;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+   }
+
 @layer components {
     .card-styles-primary {
         @apply p-5 cursor-pointer bg-white rounded hover:shadow-xl hover:shadow-gray-300 transition-all duration-200

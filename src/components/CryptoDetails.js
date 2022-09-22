@@ -170,6 +170,41 @@ const CryptoDetails = () => {
             </div>
           </div>
         </div>
+        {/* description */}
+        <div className="my-14 grid grid-cols-1 gap-y-16 lg:grid-cols-2 gap-x-14">
+          <div>
+            <h1 className="text-blue-500 text-2xl font-bold mb-2">
+              What is {coin.name}
+            </h1>
+            <div className="html-parser">
+              {HTMLReactParser(coin.description)}
+            </div>
+          </div>
+          <div>
+            <h1 className="text-blue-500 text-2xl font-bold mb-2">
+              {coin.name} Links
+            </h1>
+            <div>
+              {coin.links.map((el, i) => (
+                <div
+                  className={`flex items-center justify-between py-6 px-2 ${
+                    i < coin.links.length - 1 && "border-b"
+                  }`}
+                  key={i}
+                >
+                  <span className="capitalize">{el.type}</span>
+                  <a
+                    href={`${el.url}`}
+                    target="_blank"
+                    className="font-bold text-blue-500"
+                  >
+                    {el.name}
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
