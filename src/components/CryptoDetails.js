@@ -16,6 +16,7 @@ import {
   AiOutlineCheckCircle,
 } from "react-icons/ai";
 import Loader from "./Loader";
+import LineChart from "./LineChart";
 
 const CryptoDetails = () => {
   const { id } = useParams();
@@ -117,6 +118,7 @@ const CryptoDetails = () => {
           </div>
         </div>
         {/* line chart */}
+        <LineChart coinHistory={coinPriceHistory} />
         {/* info */}
         <div className="lg:flex lg:justify-between lg:space-x-14">
           <div className="mt-8">
