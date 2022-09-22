@@ -93,6 +93,30 @@ const CryptoDetails = () => {
         </p>
         <hr className="bg-gray-300" />
       </div>
+      <div className="p-3">
+        {/* chart headings */}
+        <div>
+          <h1 className="text-blue-500 text-2xl font-semibold">
+            {coin.name} Price Chart
+          </h1>
+          <div className="md:flex md:items-center md:space-x-5">
+            <h2>
+              Change:{" "}
+              <span
+                className={`${
+                  coin.change < 0 ? "text-red-500" : "text-green-500"
+                } font-bold`}
+              >
+                {coin.change}%
+              </span>
+            </h2>
+            <h2>
+              Current {coin.name} Price: ${" "}
+              <span className="font-bold">{millify(coin.price)}</span>
+            </h2>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
